@@ -1,41 +1,7 @@
-<!DOCTYPE html>
-<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
+@extends('layouts.app')
 
-<head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-
-    <title>Laravel</title>
-
-    <!-- Fonts -->
-    <link href="https://fonts.bunny.net/css2?family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
-
-    <!-- Styles -->
-
-    <link rel="stylesheet" href="/resources/css/app.css">
-
-
-    <style>
-
-    </style>
-</head>
-
-<body class="antialiased">
-    <div class="relative flex items-top justify-center min-h-screen  dark:bg-gray-900 sm:items-center py-4 sm:pt-0">
-        @if (Route::has('login'))
-            <div class="hidden fixed top-0 right-0 px-6 py-4 sm:block">
-                @auth
-                    <a href="{{ url('/home') }}" class="text-sm text-gray-700 dark:text-gray-500 underline">Home</a>
-                @else
-                    <a href="{{ route('login') }}" class="text-sm text-gray-700 dark:text-gray-500 underline">Log in</a>
-
-                    @if (Route::has('register'))
-                        <a href="{{ route('register') }}"
-                            class="ml-4 text-sm text-gray-700 dark:text-gray-500 underline">Register</a>
-                    @endif
-                @endauth
-            </div>
-        @endif
+@section('content')
+    <section class="antialiased">
 
         <div class="pageAbout__me">
             <div class="flex justify-center ">
@@ -51,10 +17,11 @@
             <div id="carousel">
                 <div class="carousel__img">
                     <img src="/public/img/printer1.png" alt="img" class="img__item">
-                    <img src="/public/img/printer2.png" alt="img" class="img__item">
+                    <img src="/public/img/printer7.png" alt="img" class="img__item">
                     <img src="/public/img/printer3.png" alt="img" class="img__item">
                     <img src="/public/img/printer4.png" alt="img" class="img__item">
                     <img src="/public/img/printer5.png" alt="img" class="img__item">
+
                 </div>
                 <div class="buttons__control">
                     <button class="prev__but">Назад</button>
@@ -64,9 +31,9 @@
 
 
         </div>
-    </div>
-    </div>
-    <script src="/resources/js/app.js"></script>
-</body>
+        </div>
+        </div>
+        <script src="/public/js/script.js"></script>
 
-</html>
+    </section>
+@endsection
