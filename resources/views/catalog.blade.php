@@ -2,13 +2,81 @@
 
 @section('content')
     <div class="container">
-        <section class="catalog">
-            <h2>Каталог</h2>
-            <div calakig></div>
-
-
-
-
-        </section>
+        <h2>Каталог</h2>
+        <div class="catalog__prod">
+            <div class="card">
+                <div class="card-header">
+                    Header
+                </div>
+                <div class="card-body">
+                    <h4 class="card-title">Title</h4>
+                    <p class="card-text">Text</p>
+                </div>
+                <div class="card-footer text-muted">
+                    <button>Купить</button>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-header">
+                    Header
+                </div>
+                <div class="card-body">
+                    <h4 class="card-title">Title</h4>
+                    <p class="card-text">Text</p>
+                </div>
+                <div class="card-footer text-muted">
+                    <button>Купить</button>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-header">
+                    Header
+                </div>
+                <div class="card-body">
+                    <h4 class="card-title">Title</h4>
+                    <p class="card-text">Text</p>
+                </div>
+                <div class="card-footer text-muted">
+                    <button>Купить</button>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-header">
+                    Header
+                </div>
+                <div class="card-body">
+                    <h4 class="card-title">Title</h4>
+                    <p class="card-text">Text</p>
+                </div>
+                <div class="card-footer text-muted">
+                    <button>Купить</button>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-header">
+                    Header
+                </div>
+                <div class="card-body">
+                    <h4 class="card-title">Title</h4>
+                    <p class="card-text">Text</p>
+                </div>
+                <div class="card-footer text-muted">
+                    <button>Купить</button>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-header">
+                    Header
+                </div>
+                <div class="card-body">
+                    <h4 class="card-title">Title</h4>
+                    <p class="card-text">Text</p>
+                </div>
+                <div class="card-footer text-muted">
+                    <button>Купить</button>
+                </div>
+            </div>
+        </div>
     </div>
 @endsection
+

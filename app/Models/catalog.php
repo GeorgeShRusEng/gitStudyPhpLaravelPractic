@@ -8,4 +8,5 @@ use Illuminate\Database\Eloquent\Model;
 class catalog extends Model
 {
     use HasFactory;
+
 }
