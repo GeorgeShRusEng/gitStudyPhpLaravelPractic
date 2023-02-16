@@ -3,80 +3,30 @@
 @section('content')
     <div class="container">
         <h2>Каталог</h2>
+        <select>
+            @foreach ($categories2 as $categories)
+                <option>{{ $categories->name }}</option>
+            @endforeach
+        </select>
         <div class="catalog__prod">
-            <div class="card">
-                <div class="card-header">
-                    Header
+            @foreach ($products2 as $product)
+                <div class="card card__cat">
+                    <div class="card-header">
+                        {{ $product->name }}
+                    </div>
+                    <div class="card-body card__body-cat">
+                        <img src="{{ $product->img }}" alt="img__card">
+                    </div>
+                    <div class="card-footer card-footer__cat text-muted">
+
+                        @if (Auth::user())
+                            <button>В корзину</button>
+                        @else
+                        @endif
+                        <div>{{ $product->price }} р.</div>
+                    </div>
                 </div>
-                <div class="card-body">
-                    <h4 class="card-title">Title</h4>
-                    <p class="card-text">Text</p>
-                </div>
-                <div class="card-footer text-muted">
-                    <button>Купить</button>
-                </div>
-            </div>
-            <div class="card">
-                <div class="card-header">
-                    Header
-                </div>
-                <div class="card-body">
-                    <h4 class="card-title">Title</h4>
-                    <p class="card-text">Text</p>
-                </div>
-                <div class="card-footer text-muted">
-                    <button>Купить</button>
-                </div>
-            </div>
-            <div class="card">
-                <div class="card-header">
-                    Header
-                </div>
-                <div class="card-body">
-                    <h4 class="card-title">Title</h4>
-                    <p class="card-text">Text</p>
-                </div>
-                <div class="card-footer text-muted">
-                    <button>Купить</button>
-                </div>
-            </div>
-            <div class="card">
-                <div class="card-header">
-                    Header
-                </div>
-                <div class="card-body">
-                    <h4 class="card-title">Title</h4>
-                    <p class="card-text">Text</p>
-                </div>
-                <div class="card-footer text-muted">
-                    <button>Купить</button>
-                </div>
-            </div>
-            <div class="card">
-                <div class="card-header">
-                    Header
-                </div>
-                <div class="card-body">
-                    <h4 class="card-title">Title</h4>
-                    <p class="card-text">Text</p>
-                </div>
-                <div class="card-footer text-muted">
-                    <button>Купить</button>
-                </div>
-            </div>
-            <div class="card">
-                <div class="card-header">
-                    Header
-                </div>
-                <div class="card-body">
-                    <h4 class="card-title">Title</h4>
-                    <p class="card-text">Text</p>
-                </div>
-                <div class="card-footer text-muted">
-                    <button>Купить</button>
-                </div>
-            </div>
+            @endforeach
         </div>
     </div>
 @endsection
-

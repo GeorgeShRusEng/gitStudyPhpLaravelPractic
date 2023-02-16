@@ -1,6 +1,7 @@
 <?php
 
 use Faker\Guesser\Name;
+use Illuminate\Support\Facades\App;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
@@ -24,6 +25,8 @@ Route::get('/about', function () {
 
 Auth::routes();
 
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Route::get('/home', [\App\Http\Controllers\HomeController::class, 'index'])->name('home');
 Route::view('/findMe', 'findMe')->name('find');
-Route::get('/catalog',[App\Http\Controllers\CatalogController::class, 'index'])->name('catalog');
+Route::get('/catalog', [\App\Http\Controllers\ProductController::class, 'show'])->name('catalog');
+Route::get('/category', [\App\Http\Controllers\ProductController::class, 'cate'])->name('cate');
+

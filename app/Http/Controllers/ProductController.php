@@ -46,7 +46,18 @@ class ProductController extends Controller
      */
     public function show(product $product)
     {
-        //
+        $products = \App\Models\product::all();
+        $categories=\App\Models\category::all();
+        return view('catalog', ['products2' => $products,'categories2'=>$categories]);
+        
+    }
+
+
+    public function cate($id)
+    {
+        $products = \App\Models\product::where('category',$id)->get();
+        $categories=\App\Models\category::all();
+        return view('catalog', ['products2' => $products,'categories2'=>$categories]);
     }
 
     /**
