@@ -49,8 +49,14 @@ class ProductController extends Controller
         $products = \App\Models\product::all();
         $categories=\App\Models\category::all();
         return view('catalog', ['products2' => $products,'categories2'=>$categories]);
-        
     }
+
+    public function more($id)
+    {
+        $products = \App\Models\product::find($id);
+        return view('card', ['products2' => $products]); 
+    }
+
 
 
     public function cate($id)

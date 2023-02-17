@@ -71,21 +71,35 @@ div.card__cat {
     align-items: center;
     background: antiquewhite;
 }
+
 .card__body-cat img {
     width: 80%;
 }
+
 .card__body-cat img {
     transition: 1s;
 }
+
 .card__body-cat img:hover {
     transform: scale(1.2);
 }
+
+a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
 .card-footer__cat {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
 }
+div.card-header{
+   background:#ebcda5;
+}
+
 
 html {
     line-height: 1.15;
