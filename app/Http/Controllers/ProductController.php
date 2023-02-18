@@ -54,7 +54,7 @@ class ProductController extends Controller
     public function more($id)
     {
         $products = \App\Models\product::find($id);
-        return view('card', ['products2' => $products]); 
+        return view('card', ['products2' => $products]); //вывод информации о конкретном товаре
     }
 
 

@@ -1,3 +1,22 @@
+@font-face {
+    font-family: "Trueno";
+    src: url(/public/fonts/TruenoBlackItalic-dXnl.otf);
+}
+
+* {
+    font-family:"Trueno" ;
+}
+button{
+    color: black;
+    font-size: 15px;
+    /* font-stretch: revert; */
+    font-weight: 600;
+}
+a.nav-link{
+    color: black;
+    font-weight: bold;
+    font-size: 20px;
+}
 .py-4 {
     background: antiquewhite;
 }
@@ -65,7 +84,7 @@ div.card__cat {
     width: 300px;
 }
 
-.card__body-cat {
+.card__body-cat, .card__body-card {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -74,6 +93,10 @@ div.card__cat {
 
 .card__body-cat img {
     width: 80%;
+}
+
+.card__body-card img {
+    width: 50%;
 }
 
 .card__body-cat img {
@@ -96,10 +119,29 @@ a {
     justify-content: space-between;
     align-items: center;
 }
-div.card-header{
-   background:#ebcda5;
+
+.card-footer__card {
+display: flex;
+flex-direction: column;
+}
+.card-footer__card h4{
+  padding-left: 3rem; 
 }
 
+
+h4:nth-child(odd){
+    background: #ebcda5;
+    height: 2rem;
+}
+
+
+div.card-header {
+    background: #ebcda5;
+}
+
+.card__card {
+    display: flex;
+}
 
 html {
     line-height: 1.15;
