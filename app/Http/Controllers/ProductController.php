@@ -2,8 +2,12 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\category;
 use App\Models\product;
+use Faker\Extension\Helper;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
+use Symfony\Component\Console\Helper\HelperInterface;
 
 class ProductController extends Controller
 {
@@ -44,11 +48,21 @@ class ProductController extends Controller
      * @param  \App\Models\product  $product
      * @return \Illuminate\Http\Response
      */
-    public function show(product $product)
+    public function show(Request $request, product $product)
     {
-        $products = \App\Models\product::all();
-        $categories=\App\Models\category::all();
-        return view('catalog', ['products2' => $products,'categories2'=>$categories]);
+        //   dd($request->cat_id);
+
+        if ($request->cat_id == 0) {
+            $products = \App\Models\product::all();
+        } else {
+            $products = \App\Models\product::where('category', $request->cat_id)->get();
+            // dd($products->tosql()); 
+        }
+
+
+
+        $categories = \App\Models\category::all();
+        return view('catalog', ['products2' => $products, 'categories2' => $categories]);
     }
 
     public function more($id)
@@ -57,14 +71,15 @@ class ProductController extends Controller
         return view('card', ['products2' => $products]); //вывод информации о конкретном товаре
     }
 
+    // public function carousel(product $product)
+    // {
+    //     $products = \App\Models\product::all();
+    //     return view('welcome', ['products2' => $products]);
+    // }
 
 
-    public function cate($id)
-    {
-        $products = \App\Models\product::where('category',$id)->get();
-        $categories=\App\Models\category::all();
-        return view('catalog', ['products2' => $products,'categories2'=>$categories]);
-    }
+
+
 
     /**
      * Show the form for editing the specified resource.

@@ -28,6 +28,4 @@ Auth::routes();
 Route::get('/home', [\App\Http\Controllers\HomeController::class, 'index'])->name('home');
 Route::view('/findMe', 'findMe')->name('find');
 Route::get('/catalog', [\App\Http\Controllers\ProductController::class, 'show'])->name('catalog');
-Route::get('/category/{id}', [\App\Http\Controllers\ProductController::class, 'category'])->name('category');
 Route::get('/card/{id}', [\App\Http\Controllers\ProductController::class, 'more'])->name('card');//вывод информации о конкретном товаре
-
