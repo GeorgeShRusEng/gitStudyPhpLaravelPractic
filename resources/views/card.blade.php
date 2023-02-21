@@ -26,6 +26,7 @@
                     <p>
                         <h4>Модель {{ $products2->model }}</h4>
                     </p>
+                    <div> <button class="btn__by">В корзину</button></div>
                 </div>
             </div>
         </div>

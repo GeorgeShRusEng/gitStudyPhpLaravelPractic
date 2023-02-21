@@ -6,6 +6,7 @@ use App\Models\category;
 use App\Models\product;
 use Faker\Extension\Helper;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
 use Symfony\Component\Console\Helper\HelperInterface;
 
@@ -55,12 +56,9 @@ class ProductController extends Controller
         if ($request->cat_id == 0) {
             $products = \App\Models\product::all();
         } else {
-            $products = \App\Models\product::where('category', $request->cat_id)->get();
+            $products = \App\Models\product::where('category', $request->cat_id)->get(); //категории товаров
             // dd($products->tosql()); 
         }
-
-
-
         $categories = \App\Models\category::all();
         return view('catalog', ['products2' => $products, 'categories2' => $categories]);
     }
@@ -71,11 +69,22 @@ class ProductController extends Controller
         return view('card', ['products2' => $products]); //вывод информации о конкретном товаре
     }
 
-    // public function carousel(product $product)
-    // {
-    //     $products = \App\Models\product::all();
-    //     return view('welcome', ['products2' => $products]);
-    // }
+    public function carousel(product $product)
+    {
+        $products = \App\Models\product::SELECT('id', 'name', 'img')->ORDERBY('id', 'DESC')->LIMIT(5)->get(); //вывод с BD пяти последних добавленных товаров, передаються только id,name,img
+        return view('welcome', ['products2' => $products]);
+        // dd($products);
+    }
+
+
+    
+    public function card (product $product)
+    {
+        $products = \App\Models\product::SELECT('id','name','img')->ORDERBY('id', 'DESC')->LIMIT(5)->get();
+        return view('home', ['products2' => $products]);
+        // dd($products);
+    }
+
 
 
 
@@ -112,6 +121,6 @@ class ProductController extends Controller
      */
     public function destroy(product $product)
     {
-        //
+        //find  destroy
     }
 }

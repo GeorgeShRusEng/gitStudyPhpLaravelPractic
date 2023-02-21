@@ -4,19 +4,37 @@
 }
 
 * {
-    font-family:"Trueno" ;
+    font-family: "Trueno";
 }
-button{
+
+button {
     color: black;
     font-size: 15px;
     /* font-stretch: revert; */
     font-weight: 600;
 }
-a.nav-link{
+
+button.btn, .btn__by {
+    background: #edbf83;
+    color: black;
+    font-size: large;
+}
+
+.btn__by {
+    width: 100%;
+}
+
+.btn__byc {
+    background: #edbf83;
+    color: black;
+}
+
+a.nav-link {
     color: black;
     font-weight: bold;
     font-size: 20px;
 }
+
 .py-4 {
     background: antiquewhite;
 }
@@ -121,15 +139,19 @@ a {
 }
 
 .card-footer__card {
-display: flex;
-flex-direction: column;
-}
-.card-footer__card h4{
-  padding-left: 3rem; 
+    display: flex;
+    flex-direction: column;
 }
 
+.card-footer__card h4 {
+    padding-left: 3rem;
+}
 
-h4:nth-child(odd){
+a.dropdown-item {
+    font-size: large;
+}
+
+h4:nth-child(odd) {
     background: #ebcda5;
     height: 2rem;
 }
