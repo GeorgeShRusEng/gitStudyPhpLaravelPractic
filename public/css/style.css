@@ -14,7 +14,8 @@ button {
     font-weight: 600;
 }
 
-button.btn, .btn__by {
+button.btn,
+.btn__by {
     background: #edbf83;
     color: black;
     font-size: large;
@@ -102,7 +103,8 @@ div.card__cat {
     width: 300px;
 }
 
-.card__body-cat, .card__body-card {
+.card__body-cat,
+.card__body-card {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -145,6 +147,31 @@ a {
 
 .card-footer__card h4 {
     padding-left: 3rem;
+}
+
+.prod__list {
+    display: flex;
+    flex-direction: column;
+}
+
+.img__item-card {
+    width: 5rem;
+}
+
+td{
+    width: 20%;
+}
+input{
+    border: solid gray;
+    border-radius: 10px;
+    width: 5rem;
+
+}
+
+
+.prod__item {
+    display: flex;
+    align-items: center;
 }
 
 a.dropdown-item {

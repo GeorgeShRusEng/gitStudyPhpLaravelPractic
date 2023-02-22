@@ -43,7 +43,7 @@
                             <a class="nav-link" href="{{ route('find') }}">Где нас найти?</a>
                         </li>
                         <li class="nav-item">
-                            @auth()  
+                            @auth()
                            <a class="nav-link" href="{{ route('cardd') }}">Корзина</a> @endauth
                         </li>
                     </ul>
@@ -75,7 +75,7 @@
                                     {{ __('Выход') }}
                                 </a>
 
-                                <a class="dropdown-item" href="{{ route('home') }}">Домой</a>
+                                <a class="dropdown-item" href="{{ route('cardd') }}">Домой</a>
 
 
                                 <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">

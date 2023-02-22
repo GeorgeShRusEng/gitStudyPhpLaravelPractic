@@ -22,10 +22,10 @@ Route::get('/about',[\App\Http\Controllers\ProductController::class, 'carousel']
 Auth::routes();
 
 Route::get('/home', [\App\Http\Controllers\HomeController::class, 'index'])->name('home');
-Route::get('/home/card', [\App\Http\Controllers\ProductController::class, 'card'])->name('cardd');
+Route::get('/home/card', [\App\Http\Controllers\ProductController::class, 'card'])->name('cardd');//Корзина/личный кабинет
 
 
 Route::view('/findMe', 'findMe')->name('find');
-Route::get('/catalog', [\App\Http\Controllers\ProductController::class, 'show'])->name('catalog');
+Route::get('/catalog', [\App\Http\Controllers\ProductController::class, 'show'])->name('catalog');//вывод всех товаров в каталоге
 Route::get('/card/{id}', [\App\Http\Controllers\ProductController::class, 'more'])->name('card');//вывод информации о конкретном товаре
 //SOLID читать почаще и вникать(принципы разработки)

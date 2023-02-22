@@ -57,7 +57,7 @@ class ProductController extends Controller
             $products = \App\Models\product::all();
         } else {
             $products = \App\Models\product::where('category', $request->cat_id)->get(); //категории товаров
-            // dd($products->tosql()); 
+            // dd($products->tosql());
         }
         $categories = \App\Models\category::all();
         return view('catalog', ['products2' => $products, 'categories2' => $categories]);
@@ -77,10 +77,10 @@ class ProductController extends Controller
     }
 
 
-    
+
     public function card (product $product)
     {
-        $products = \App\Models\product::SELECT('id','name','img')->ORDERBY('id', 'DESC')->LIMIT(5)->get();
+        $products = \App\Models\product::SELECT('id','name','img','price')->ORDERBY('id', 'DESC')->LIMIT(5)->get();
         return view('home', ['products2' => $products]);
         // dd($products);
     }

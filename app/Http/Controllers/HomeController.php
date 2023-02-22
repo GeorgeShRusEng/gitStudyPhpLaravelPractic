@@ -23,6 +23,7 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return view('home');
+        $products = \App\Models\product::SELECT('id','name','img','price')->ORDERBY('id', 'DESC')->LIMIT(5)->get();
+        return view('home', ['products2' => $products]);
     }
 }
