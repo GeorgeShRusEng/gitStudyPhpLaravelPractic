@@ -60,7 +60,7 @@ a.nav-link {
 
 #img,
 .img__item {
-    width: 15rem;
+    /* width: 15rem; */
     height: 15rem;
     display: none;
 }

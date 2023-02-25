@@ -49,9 +49,9 @@ class ProductController extends Controller
      * @param  \App\Models\product  $product
      * @return \Illuminate\Http\Response
      */
-    public function show(Request $request, product $product)
+     public function show(Request $request) //,product $product)
     {
-        //   dd($request->cat_id);
+        //   dd($request->cat_id)
 
         if ($request->cat_id == 0) {
             $products = \App\Models\product::all();
@@ -59,6 +59,7 @@ class ProductController extends Controller
             $products = \App\Models\product::where('category', $request->cat_id)->get(); //категории товаров
             // dd($products->tosql());
         }
+        
         $categories = \App\Models\category::all();
         return view('catalog', ['products2' => $products, 'categories2' => $categories]);
     }
