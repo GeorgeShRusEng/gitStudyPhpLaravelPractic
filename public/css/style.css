@@ -14,20 +14,21 @@ button {
     font-weight: 600;
 }
 
-button.btn,
+a.btn,
 .btn__by {
     background: #edbf83;
     color: black;
     font-size: large;
 }
 
-.btn__by {
+a.btn__by {
     width: 100%;
 }
 
-.btn__byc {
+a.btn__byc {
     background: #edbf83;
     color: black;
+    cursor: pointer;
 }
 
 a.nav-link {

@@ -29,3 +29,6 @@ Route::view('/findMe', 'findMe')->name('find');
 Route::get('/catalog', [\App\Http\Controllers\ProductController::class, 'show'])->name('catalog');//вывод всех товаров в каталоге
 Route::get('/card/{id}', [\App\Http\Controllers\ProductController::class, 'more'])->name('card');//вывод информации о конкретном товаре
 //SOLID читать почаще и вникать(принципы разработки)
+// Route::get('/card', [\App\Http\Controllers\BasketController::class, 'index'])->name('cartPage');
+// Route::get('/card/add/{id}', [\App\Http\Controllers\BasketController::class, 'create'])->name('cartAdd');
+Route::get('/cart/add', [\App\Http\Controllers\BasketController::class, 'index'])->name('cartAdd');
