@@ -79,12 +79,12 @@ class ProductController extends Controller
 
 
 
-    public function card (product $product)
-    {
-        $products = \App\Models\product::SELECT('id','name','img','price')->ORDERBY('id', 'DESC')->LIMIT(5)->get();
-        return view('home', ['products2' => $products]);
-        // dd($products);
-    }
+    // public function card (product $product)
+    // {
+    //     $products = \App\Models\product::SELECT('id','name','img','price')->ORDERBY('id', 'DESC')->LIMIT(10)->get();
+    //     return view('home', ['products2' => $products]);
+    //     // dd($products);
+    // }
 
 
 

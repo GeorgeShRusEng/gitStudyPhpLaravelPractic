@@ -15,10 +15,13 @@ class BasketController extends Controller
      */
     public function index()
     {
-        // $baskets = basket::where('user_id', auth()->user()->id)->get();
-        // return view('home', compact('baskets'));
-        return redirect()->route('catalog');
-        
+        $baskets = basket::where('user_id', auth()->user()->id)->get();
+        // return view('home',('baskets'));
+       
+        // return view('home', ['products2' => $baskets]);
+        dd($baskets);
+
+
     }
 
     /**
@@ -28,30 +31,28 @@ class BasketController extends Controller
      */
     public function create($id)
     {
-        // $product = product::find($id);
-        // if($product->count < 1) {
-        //     return back();
-        // }
+        $product = product::find($id);
+        if ($product->count < 1) {
+            return back();
+        }
 
-        // if($basket = basket::where('product_id', $id)->where('user_id', auth()->user()->id)->first()) {
-        //     $basket->count++;
-        //     $basket->save();
-        //     $product->count--;
-        //     $product->save();
-        // } else {
-        //     basket::create([
-        //         'user_id' => auth()->user()->id,
-        //         'product_id' => $id,
-        //         'count' => 1,
-        //     ]);
-        //     $product->count--;
-        //     $product->save();
-        // }
-
-        // return redirect()->route('cartPage');
-        
-
-
+        if ($basket = basket::where('product_id', $id)->where('user_id', auth()->user()->id)->first()) {
+            $basket->count++;
+            $basket->save();
+            $product->count--;
+            $product->save();
+        } else {
+            basket::create([
+                'user_id' => auth()->user()->id,
+                'product_id' => $id,
+                'count' => 1,
+            ]);
+            $product->count--;
+            $product->save();
+        }
+        // dd($basket);
+      
+        return redirect()->route('catalog');
     }
 
     /**
