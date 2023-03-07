@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\CatalogController;
 use Faker\Guesser\Name;
 use Illuminate\Support\Facades\App;
 use Illuminate\Support\Facades\Auth;
@@ -22,11 +23,12 @@ Route::get('/about',[\App\Http\Controllers\ProductController::class, 'carousel']
 Auth::routes();
 
 Route::get('/home', [\App\Http\Controllers\HomeController::class, 'index'])->name('home');
-Route::get('/home/card', [\App\Http\Controllers\BasketController::class, 'index'])->name('cardd');//Корзина/личный кабинет
-
 
 Route::view('/findMe', 'findMe')->name('find');
-Route::get('/catalog', [\App\Http\Controllers\ProductController::class, 'show'])->name('catalog');//вывод всех товаров в каталоге
+Route::get('/catalog', [\App\Http\Controllers\ProductController::class, 'show'])->name('catalog');//вывод вс
+Route::get('/catalog/sort/year', [CatalogController::class, 'year'])->name('catalogYear');
+Route::get('/catalog/sort/price', [CatalogController::class, 'price'])->name('catalogPrice');//ех товаров в каталоге
+Route::get('/catalog/sort/name', [CatalogController::class, 'name'])->name('catalogName');
 Route::get('/card/{id}', [\App\Http\Controllers\ProductController::class, 'more'])->name('card');//вывод информации о конкретном товаре
 //SOLID читать почаще и вникать(принципы разработки)
 Route::get('/card', [\App\Http\Controllers\BasketController::class, 'index'])->name('cartPage');//для кнопки в корзину

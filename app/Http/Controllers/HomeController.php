@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\basket;
+use App\Models\product;
 use Illuminate\Http\Request;
 
 class HomeController extends Controller
@@ -23,7 +25,7 @@ class HomeController extends Controller
      */
     public function index()
     {
-        $products = \App\Models\product::SELECT('id','name','img','price')->ORDERBY('id', 'DESC')->LIMIT(5)->get();
-        return view('home', ['products2' => $products]);
+        $products = basket::where('user_id', auth()->user()->id)->get();
+        return view('home', compact('products'));
     }
 }

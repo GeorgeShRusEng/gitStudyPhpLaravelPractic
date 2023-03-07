@@ -16,7 +16,7 @@
 
                 <div id="carousel">
                     <div class="carousel__img">
-                        @foreach ($products2 as $product)
+                        @foreach ($products as $product)
                     
                             <img src="{{ $product->img }}" alt="img" class="img__item">
                             

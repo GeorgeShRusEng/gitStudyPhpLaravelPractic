@@ -20,18 +20,25 @@
                             </p>
                             <div class="orders">
                                 <div class="prod__list">
-                                    @foreach ($products2 as $product)
-                                        <table>
-                                            <div class="prod__item">
-                                                <td><img class="img__item-card" src="{{ $product->img }}" alt="img">
-                                                </td>
-                                                <td>{{ $product->name }}</td>
-                                                <td> {{ $product->price }} р.</td>
-                                                <td class="take__count"><input type="number" name="" id=""></td>
-                                                <td>Сумма</td>
-                                            </div>
-                                        </table>
+
+                                    @foreach ($products as $bascket)
+                                        
+                                            <table>
+                                                <div class="prod__item">
+                                                    <td><img class="img__item-card" src="{{ $bascket->product->img }}"
+                                                            alt="img">
+                                                    </td>
+                                                    <td>{{ $bascket->product->name }}</td>
+                                                    <td> {{ $bascket->product->price }} р.</td>
+                                                    <td>{{ $bascket->count }}</td>
+                                                    <td>Сумма</td>
+                                                     
+                                                </div>
+                                            </table>
+                                      
                                     @endforeach
+
+
                                 </div>
                             </div>
                         </div>

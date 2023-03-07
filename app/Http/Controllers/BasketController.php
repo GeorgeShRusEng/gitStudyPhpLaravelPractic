@@ -13,16 +13,6 @@ class BasketController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
-    {
-        $baskets = basket::where('user_id', auth()->user()->id)->get();
-        // return view('home',('baskets'));
-       
-        // return view('home', ['products2' => $baskets]);
-        dd($baskets);
-
-
-    }
 
     /**
      * Show the form for creating a new resource.

@@ -49,11 +49,12 @@ class RegisterController extends Controller
      */
     protected function validator(array $data)
     {
+        // ,'regex:/^[а-яА-Я-]+$/u'
         return Validator::make($data, [
-            'name' => ['required', 'string', 'max:255','regex:/^[а-яА-Я-]+$/u'],
-            'surname' => ['required', 'string', 'max:255','regex:/^[а-яА-Я-]+$/u'],
+            'name' => ['required', 'string', 'max:255'],
+            'surname' => ['required', 'string', 'max:255'],
             'patronymic' => ['nullable','max:255'],
-            'login' => ['required', 'string', 'max:255','regex:/^[a-zA-Z-]+$/u'],
+            'login' => ['required', 'string', 'max:255'],
             'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
             'password' => ['required', 'string', 'min:6', 'confirmed'],
         ]);

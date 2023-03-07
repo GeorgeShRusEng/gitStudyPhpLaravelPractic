@@ -44,7 +44,7 @@
                         </li>
                         <li class="nav-item">
                             @auth()
-                           <a class="nav-link" href="{{ route('cardd') }}">Корзина</a> @endauth
+                           <a class="nav-link" href="{{ route('home') }}">Корзина</a> @endauth
                         </li>
                     </ul>
 
@@ -75,7 +75,7 @@
                                     {{ __('Выход') }}
                                 </a>
 
-                                <a class="dropdown-item" href="{{ route('cardd') }}">Домой</a>
+                                <a class="dropdown-item" href="{{ route('home') }}">Домой</a>
 
 
                                 <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">

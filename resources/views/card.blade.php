@@ -7,24 +7,24 @@
                 <div class="card">
                     <div class="card-header">
                         <p>
-                        <h2>{{ $products2->name }}</h2>
+                        <h2>{{ $products->name }}</h2>
                         </p>
                     </div>
                     <div class="card__body-card">
-                        <img src="{{ $products2->img }}" alt="img">
+                        <img src="{{ $products->img }}" alt="img">
                     </div>
                     <div class="card-footer__card">
                         <p>
-                        <h4>Цена: {{ $products2->price }}</h4>
+                        <h4>Цена: {{ $products->price }}</h4>
                         </p>
                         <p>
-                        <h4>Сделано в {{ $products2->country }}</h4>
+                        <h4>Сделано в {{ $products->country }}</h4>
                         </p>
                         <p>
-                        <h4>Произведено в {{ $products2->year }}</h4>
+                        <h4>Произведено в {{ $products->year }}</h4>
                         </p>
                         <p>
-                        <h4>Модель {{ $products2->model }}</h4>
+                        <h4>Модель {{ $products->model }}</h4>
                         </p>
                         @auth
 

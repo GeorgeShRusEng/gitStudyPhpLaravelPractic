@@ -54,26 +54,26 @@ class ProductController extends Controller
         //   dd($request->cat_id)
 
         if ($request->cat_id == 0) {
-            $products = \App\Models\product::all();
+            $products = \App\Models\product::orderby('price')->get();
         } else {
             $products = \App\Models\product::where('category', $request->cat_id)->get(); //категории товаров
             // dd($products->tosql());
         }
         
         $categories = \App\Models\category::all();
-        return view('catalog', ['products2' => $products, 'categories2' => $categories]);
+        return view('catalog', ['products' => $products, 'categories' => $categories]);
     }
 
     public function more($id)
     {
         $products = \App\Models\product::find($id);
-        return view('card', ['products2' => $products]); //вывод информации о конкретном товаре
+        return view('card', ['products' => $products]); //вывод информации о конкретном товаре
     }
 
     public function carousel(product $product)
     {
         $products = \App\Models\product::SELECT('id', 'name', 'img')->ORDERBY('id', 'DESC')->LIMIT(5)->get(); //вывод с BD пяти последних добавленных товаров, передаються только id,name,img
-        return view('welcome', ['products2' => $products]);
+        return view('welcome', ['products' => $products]);
         // dd($products);
     }
 
